@@ -4,17 +4,15 @@
 #include <istream>
 #include <ostream>
 
+Tetragon::Tetragon()
+{
+    std::cin >> Length;    
 
+};
 Tetragon::Tetragon(int Length) : Length(Length)
 {
     
 }
-
-Tetragon::Tetragon()
-{
-    std::cin >> Length;
-}
-
 
 float Tetragon::p() const
 {
@@ -23,7 +21,7 @@ float Tetragon::p() const
 
 void Tetragon::show(std::ostream &os) const
 { 
-    os << s() << ", " << p() << ", " << d();
+    os <<"square: " << s() << "\n" <<"perimetr: " << p() << "\n" << "diagonal: "<< d() <<std::endl;
 }
 
 float Tetragon::s() const
@@ -44,8 +42,3 @@ std::ostream &operator<<(std::ostream &os, const Tetragon &s)
    return os;
 }
 
-
-std::istream &operator>>(std::istream &in, const Tetragon &s)
-{
-    return in >> s.Length;
-}

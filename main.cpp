@@ -24,16 +24,20 @@ int main()
     std::vector<Pyramid> Tpyramid;
     Tetragon t1;
     Tetragon t2;
-    Tetragon t3;
+    //Tetragon t3;
     
-    Pyramid p1(5, 5.0);
+    t1.show(std::cout);
+    t2.show(std::cout);
+    //t3.show(std::cout);
+
+    Pyramid p1;
     Tetragon *obj1 = &p1;
-    Pyramid p2(8, 4.0);
+    Pyramid p2;
     Tetragon *obj2 = &p2; 
-    Pyramid p3(12, 4.0);
-    Tetragon *obj3 = &p3;
-    
-  
-    
+    //Pyramid p3;
+    //Tetragon *obj3 = &p3; 
+    p1.show(std::cout);
+    p2.show(std::cout);
+    //p3.show(std::cout);
     return 0;
 }
