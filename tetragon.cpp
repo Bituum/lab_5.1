@@ -6,10 +6,8 @@
 
 Tetragon::Tetragon()
 {
-    std::cin >> Length;    
-
-};
-Tetragon::Tetragon(int Length) : Length(Length)
+}
+Tetragon::Tetragon(float m_Length) : Length(m_Length)
 {
     
 }
@@ -19,10 +17,10 @@ float Tetragon::p() const
     return Length * 4;
 }
 
-void Tetragon::show(std::ostream &os) const
-{ 
-    os <<"square: " << s() << "\n" <<"perimetr: " << p() << "\n" << "diagonal: "<< d() <<std::endl;
-}
+// void Tetragon::show(std::ostream &os) const
+// { 
+//     os <<"square: " << s() << "\n" <<"perimetr: " << p() << "\n" << "diagonal: "<< d() <<std::endl;
+// }
 
 float Tetragon::s() const
 {
@@ -36,9 +34,13 @@ float Tetragon::d() const
     return sqrt(tmp);
 }
 
-std::ostream &operator<<(std::ostream &os, const Tetragon &s)
+std::ostream &operator<<(std::ostream &os, const Tetragon &t)
 {
-   s.show(os);
+   os <<"square: " << t.s() << "\n" <<"perimetr: " << t.p() << "\n" << "diagonal: "<< t.d() << "\n";
    return os;
 }
-
+std::istream &operator>>(std::istream &in, Tetragon &s)
+{
+    in >> s.Length;
+    return in;
+}

@@ -20,24 +20,23 @@
 #include <tuple>
 int main()
 {
-    std::vector<Tetragon> Tvector;
-    std::vector<Pyramid> Tpyramid;
-    Tetragon t1;
-    Tetragon t2;
-    //Tetragon t3;
+    int N, M;
+    std::cin >> N >> M;
+    Tetragon *t = static_cast<Tetragon*>(operator new[](N*sizeof(Tetragon)));
+    Pyramid *p = static_cast<Pyramid*>(operator new[] (M*sizeof(Pyramid)));
     
-    t1.show(std::cout);
-    t2.show(std::cout);
-    //t3.show(std::cout);
+    for(int i = 0; i < N; i++)
+    {
+        // std::cin >> t[i];
+        // t[i].show(std::cout);
+    }
+    for(int i = 0; i < M; i++)
+    {
+        // std::cin >> p[i];
+    }
+    operator delete[] (t); 
 
-    Pyramid p1;
-    Tetragon *obj1 = &p1;
-    Pyramid p2;
-    Tetragon *obj2 = &p2; 
-    //Pyramid p3;
-    //Tetragon *obj3 = &p3; 
-    p1.show(std::cout);
-    p2.show(std::cout);
-    //p3.show(std::cout);
+    operator delete[] (p); 
+    
     return 0;
 }

@@ -27,3 +27,8 @@ std::ostream &operator<<(std::ostream &out, Pyramid &p)
     p.show(out);
     return out;
 }
+std::istream &operator>>(std::istream &in, Pyramid &p)
+{
+    in >> p.h;
+    return in;
+}
