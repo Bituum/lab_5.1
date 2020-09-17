@@ -8,13 +8,12 @@ class Tetragon
 {
     protected:
         float Length;
+        float p() const;
+        float d() const;
     public:
         Tetragon();
         Tetragon(float m_Length);
-        virtual void show(std::ostream&) const;
-        virtual float s() const;
-        virtual float p() const;
-        virtual float d() const;
+        float s() const;
         friend std::ostream &operator<<(std::ostream &os, const Tetragon &t);
         friend std::istream &operator>>(std::istream &in, Tetragon &s);
 };

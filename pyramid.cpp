@@ -11,24 +11,24 @@ float Pyramid::ap() const
 }
 
 
-void Pyramid::show(std::ostream &os) const
-{
-    os << "Height " << ap() << "\n" << "volume "<< v() << std::endl;
-}
+// void Pyramid::show(std::ostream &os) const
+// {
+//     os << "Height " << ap() << "\n" << "volume "<< v() << std::endl;
+// }
 float Pyramid::v() const 
 {
-    float tmp = (0.333333) * s() * ap();
-    return tmp;
+    return (s() * ap() /3);
 }
 
 
 std::ostream &operator<<(std::ostream &out, Pyramid &p)
 {
-    p.show(out);
+    out << "Height " << p.ap() << "\n" << "volume "<< p.v() << "\n";
     return out;
 }
 std::istream &operator>>(std::istream &in, Pyramid &p)
 {
-    in >> p.h;
+    std::cout << "Enter the apothem and the length" << std::endl;
+    in >> p.h >> p.Length;
     return in;
 }

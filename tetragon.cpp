@@ -17,10 +17,6 @@ float Tetragon::p() const
     return Length * 4;
 }
 
-// void Tetragon::show(std::ostream &os) const
-// { 
-//     os <<"square: " << s() << "\n" <<"perimetr: " << p() << "\n" << "diagonal: "<< d() <<std::endl;
-// }
 
 float Tetragon::s() const
 {
@@ -41,6 +37,7 @@ std::ostream &operator<<(std::ostream &os, const Tetragon &t)
 }
 std::istream &operator>>(std::istream &in, Tetragon &s)
 {
+    std::cout << "Enter the length" << std::endl;
     in >> s.Length;
     return in;
 }
